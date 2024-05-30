@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/cadastro.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="cadastro.html">Cadastrar</a>
+            <a href="login.html">Login</a>
+            <a href="principal.html">Lista</a>
+        </ul>
+    </nav>
+    <form class="formulario">
+        <div class="pokemon">
+            <div class="pokemon_nome"></div>
+            <img src="" class="pokemon_imagem" alt="Imagem do Pokemon">
+            <div class="pokemon_numero"></div>
+        </div>
+        <div class="campos">
+            <div class="group">
+                <label for="nome_pokemon">Digite o Nome/Número do Pokemon:</label>
+                <input type="text" id="nome_pokemon" class="input_pokemon" placeholder="Busque pokemon ...">
+            </div>
+            <div class="group">
+                <label for="cep">Cep:</label>
+                <input type="number" name="cep" id="cep" placeholder="Digite o Cep">
+            </div>
+            <div class="group">
+                <label for="rua">Rua:</label>
+                <input type="text" name="rua" id="rua" placeholder="Rua">
+            </div>
+            <div class="group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" name="bairro" id="bairro" placeholder="Bairro">
+            </div>
+            <div class="group">
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade" placeholder="Cidade">
+            </div>
+            <div class="group">
+                <label for="uf">UF:</label>
+                <input type="text" name="uf" id="uf" placeholder="Estado">
+            </div>
+        </div>
+        <div class="group_btn">
+            <button id="btn_salvar" class="btn_salvar">Salvar Dados</button>
+        </div>
+    </form>
+
+    <script src="JS/Pokemon.js"></script>
+    <script src="JS/cep.js"></script>
+</body>
+</html>
