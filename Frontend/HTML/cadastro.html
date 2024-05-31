@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Frontend/CSS/cadastro.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Cadastro Usuario</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container" data-aos="zoom-out">
+            <div class="topo">
+                <img src="/Frontend/images/pokeball_419467.png" alt="" class="icon">
+                <p class="title_login">CADASTRO POKECEP</p>
+                <img src="/Frontend/images/placeholder_1514017.png" alt="" class="icon">
+            </div>   
+            <form action="">
+                <div class="group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Digite o seu Email">
+                </div>
+                <div class="group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha" placeholder="Digite a sua Senha">
+                </div>
+                <div class="group">
+                    <label for="conf_senha" class="conf_senha">Confirmar Senha:</label>
+                    <input type="password" name="conf_senha" id="conf_senha" placeholder="Digite novamente a sua Senha">
+                </div>
+                <div class="divisor">
+                    <div class="union">
+                        <p>Já tem um Login?  &nbsp;</p><a href="/Frontend/HTML/index.html">Clique Aqui</a>
+                    </div>
+                </div>
+        </form>
+        <button type="submit" class="btn_cadastrar" id="btn_cadastrar">CADASTRAR</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Frontend/CSS/lista.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Lista PokeCeps</title>
+</head>
+<body>
+    <nav>
+        <div class="topo">
+            <img src="/Frontend/images/pokeball_419467.png" alt="" class="icon">
+            <p class="title_login">POKECEP</p>
+            <img src="/Frontend/images/placeholder_1514017.png" alt="" class="icon">
+        </div> 
+        <ul>
+            <a href="cadastroPokeCep.html">CADASTRAR</a>
+            <a href="lista.html">LISTA</a>
+            <a href="index.html" class="a_sair"> SAIR</a>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="listagem" data-aos="fade-right">
+            <div class="pokemon2">
+                <div class="pokedex" style="height: 100%; flex-direction: row;">
+                    <div class="acoplamento">
+                        <div class="pokemon_nome"></div>
+                        <img src="" class="pokemon_imagem" alt="Imagem do Pokemon">
+                        <div class="pokemon_numero"></div>
+                    </div>
+                    <div>
+                        <p>CEP: 89498189</p>
+                        <p>Rua:</p>
+                        <p>Bairro:</p>
+                        <p>Cidade:</p>
+                        <p>Uf:</p>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button class="btn_editar" id="btn_editar">EDITAR</button>
+                    <button class="btn_excluir" id="btn_excluir">EXCLUIR</button>
+                </div>
+            </div>
+        </div>
+
+    <div class="container" id="container">
+        <form class="formulario">
+            <div class="pokemon">
+                <div class="pokedex">
+                    <div class="pokemon_nome"></div>
+                    <img src="" class="pokemon_imagem" alt="Imagem do Pokemon">
+                    <div class="pokemon_numero"></div>
+                </div>
+                
+                <div class="group">
+                    <label for="nome_pokemon">Digite o Nome/Número do Pokemon:</label>
+                    <input type="text" id="nome_pokemon" class="input_pokemon" placeholder="Busque pokemon ...">
+                </div>
+            </div>
+            <div class="campos">
+                
+                <div class="group">
+                    <label for="cep">Cep:</label>
+                    <input type="number" name="cep" id="cep" placeholder="Digite o Cep">
+                </div>
+                <div class="group">
+                    <label for="rua">Rua:</label>
+                    <input type="text" name="rua" id="rua" placeholder="Rua">
+                </div>
+                <div class="group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" name="bairro" id="bairro" placeholder="Bairro">
+                </div>
+                <div class="group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" name="cidade" id="cidade" placeholder="Cidade">
+                </div>
+                <div class="group">
+                    <label for="uf">UF:</label>
+                    <input type="text" name="uf" id="uf" placeholder="Estado">
+                </div>
+            </div>
+            
+        </form>
+        <div class="group_btn">
+            <button id="btn_salvar" class="btn_salvar">Salvar Dados</button>
+        </div>
+    </div>
+    
+    </main>
+    <!---->
+    <script src="/Frontend/JS/lista.js"></script>
+    <script src="/Frontend/JS/pokemon.js"></script>
+    <script src="/Frontend/JS/cep.js"></script>    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+    
+</body>
+</html>
