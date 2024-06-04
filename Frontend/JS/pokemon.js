@@ -27,6 +27,7 @@ const input = document.querySelector('.input_pokemon');
         const data = await fetchPokemon(pokemon);
 
         if (data) {
+            PokemonImage.style.display = 'flex';
             PokemonName.innerHTML = data.name;
             PokemonNumber.innerHTML = data.id;
             PokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];

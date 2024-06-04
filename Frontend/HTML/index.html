@@ -18,11 +18,11 @@
             <form action="">
                 <div class="group">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" placeholder="Digite o seu Email">
+                    <input type="email" name="email" id="email" placeholder="Digite o seu Email"  autocomplete="email">
                 </div>
                 <div class="group">
                     <label for="senha">Senha:</label>
-                    <input type="password" name="senha" id="senha" placeholder="Digite a sua Senha">
+                    <input type="password" name="senha" id="senha" placeholder="Digite a sua Senha" autocomplete="current-password">
                 </div>
                 <div class="divisor">
                     <div class="union">
@@ -35,6 +35,9 @@
     </div>
    <script src="/Frontend/JS/app.js"></script>
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="/Frontend/JS/user_login.js"></script>
     <script>
         AOS.init();
       </script>

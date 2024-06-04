@@ -167,3 +167,9 @@ input::placeholder{
 .btn_salvar:hover{
     opacity: 0.5;
 }
+/* Itens desabilidatdos do formulário*/
+*:disabled {
+    background-color: rgb(128, 126, 126);
+    color: linen;
+    opacity: 1;
+  }
