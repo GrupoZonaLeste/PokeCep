@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime, timezone
 from urllib.parse import unquote
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi.encoders import jsonable_encoder
 
 from database.database import *
 from models.model import Pokemon
@@ -43,8 +44,9 @@ async def deletar_pokemon():
     pass
 
 @router.get('/listar_pokemon/')
-async def listar_pokemon():
-    pass
+async def buscar_pokemon(cep):
+    pokemons = await listar_pokemon(cep)  
+    return jsonable_encoder(pokemons)
 
 @router.put('/editar_pokemon/')
 async def editar_pokemon():

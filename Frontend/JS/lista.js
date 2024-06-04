@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () =>{
 
-    const btn_editar = document.getElementById('btn_editar')
-    const container = document.getElementById('container')
-
-    btn_editar.addEventListener('click', () =>{
-        container.style.display = 'flex' 
-    })
+    
 });
+function btns(){
+const btn_editar = document.getElementById('btn_editar_4')
+btn_editar.addEventListener('click', () =>{
+    const container = document.getElementById('container')
+    container.style.display = 'flex' 
+})
+}

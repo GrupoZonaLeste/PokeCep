@@ -254,3 +254,17 @@ input::placeholder{
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+}
+

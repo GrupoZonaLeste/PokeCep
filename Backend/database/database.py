@@ -8,4 +8,17 @@ collection = database['pokemon']
 def enviar_pokemon(pokemon: dict):
     collection.insert_one(pokemon)
 
+async def listar_pokemon(cep):
+    if cep == "":
+        pokemons = []
+        for i in collection.find():
+            i["_id"] = f"ObjectId({str(i['_id'])})"
+            pokemons.append(i)
+    else:
+        filter = {"cep": {"$regex": f"^{cep}"}}
+        pokemons = []
+        for i in collection.find(filter=filter):
+            i["_id"] = f"ObjectId({str(i['_id'])})"
+            pokemons.append(i)
+    return pokemons
 

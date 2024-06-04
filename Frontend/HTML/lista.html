@@ -20,29 +20,12 @@
             <a href="index.html" class="a_sair"> SAIR</a>
         </ul>
     </nav>
-
+    <div class="search-container">
+        <input type="text" id="busca" placeholder="Busca Por Cep...">
+    </div>
     <main>
-        <div class="listagem" data-aos="fade-right">
-            <div class="pokemon2">
-                <div class="pokedex" style="height: 100%; flex-direction: row;">
-                    <div class="acoplamento">
-                        <div class="pokemon_nome"></div>
-                        <img src="" class="pokemon_imagem" alt="Imagem do Pokemon">
-                        <div class="pokemon_numero"></div>
-                    </div>
-                    <div>
-                        <p>CEP: 89498189</p>
-                        <p>Rua:</p>
-                        <p>Bairro:</p>
-                        <p>Cidade:</p>
-                        <p>Uf:</p>
-                    </div>
-                </div>
-                <div class="btns">
-                    <button class="btn_editar" id="btn_editar">EDITAR</button>
-                    <button class="btn_excluir" id="btn_excluir">EXCLUIR</button>
-                </div>
-            </div>
+        <div class="listagem" data-aos="fade-right" id="listagem">
+            
         </div>
 
     <div class="container" id="container">
@@ -91,10 +74,15 @@
     
     </main>
     <!---->
-    <script src="/Frontend/JS/lista.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <script src="/Frontend/JS/pokemon.js"></script>
     <script src="/Frontend/JS/cep.js"></script>    
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/Frontend/JS/listar_pokemon.js"></script>
+    <script src="/Frontend/JS/lista.js"></script>
     <script>
         AOS.init();
       </script>
