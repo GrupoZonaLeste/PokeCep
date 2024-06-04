@@ -53,7 +53,12 @@ const inputCidade = document.getElementById('cidade');
         .catch(error => console.log('error', error));
             } else {
                 limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
+                Swal.fire({
+                    icon: "error",
+                    title: "Formato de CEP inválido!",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             }
             } else {
                 limpa_formulário_cep();
