@@ -12,6 +12,8 @@ body {
     background-image: url('/Frontend/images/4814407.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
 }
 
 nav{
@@ -83,7 +85,7 @@ main{
     border-radius: 1rem;
     margin-top: 3rem;
     width: 30rem;
-    max-height: 30rem;
+    max-height: 38rem;
     overflow-y: scroll;
     background-color: #fff;
     box-shadow: 0px 0px 10px 5px #0a8bf5;
@@ -146,7 +148,7 @@ main{
     border-radius: 1rem;
     height: 75%;
     width: 100%;
-    
+    margin-top: 2rem;
 }
 
 .acoplamento{

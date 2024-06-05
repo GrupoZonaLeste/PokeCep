@@ -20,7 +20,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 title: "Cadastro feito com Sucesso!",
                 showConfirmButton: false,
                 timer: 1500
+              }).then(function() {
+                window.location.replace("http://127.0.0.1:3001/Frontend/HTML/index.html")
               });
+              
           }).catch(function () {
             Swal.fire({
                 icon: "error",
