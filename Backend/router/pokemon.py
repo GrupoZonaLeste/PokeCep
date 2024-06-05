@@ -40,8 +40,9 @@ async def inserir_pokemon(pokemon: Pokemon, token: str = Depends(verificar_token
     enviar_pokemon(pokemon_dict)
 
 @router.delete('/deletar_pokemon/')
-async def deletar_pokemon():
-    pass
+async def excluir_pokemon(id: str):
+    response = deletar_pokemon(id)
+    return response
 
 @router.get('/listar_pokemon/')
 async def buscar_pokemon(cep):

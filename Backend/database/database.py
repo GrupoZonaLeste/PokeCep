@@ -22,3 +22,12 @@ async def listar_pokemon(cep):
             pokemons.append(i)
     return pokemons
 
+def deletar_pokemon(id):
+    object_id_str = id
+    object_id = ObjectId(object_id_str)
+    response = collection.find_one_and_delete({"_id": object_id})
+    if response:
+        return {"STATUS":"DELETED"}
+    else:
+        return{"STATUS":"NOT FOUND"}
+

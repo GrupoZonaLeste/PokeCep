@@ -12,6 +12,7 @@ async function displayData(data) {
     const listagemDiv = document.getElementById('listagem');
     listagemDiv.innerHTML = '';
     for (const item of data) {
+        const bd_id = item._id.match(/\(([^)]+)\)/)[1];
         const id = item.id;
         const pokemonData = await fetchPokemonData(id);
         const itemDiv = document.createElement('div');
@@ -33,8 +34,8 @@ async function displayData(data) {
                 </div>
             </div>
             <div class="btns">
-                <button class="btn_editar" id="btn_editar_${id}" data-id="${id}">EDITAR</button>
-                <button class="btn_excluir" id="btn_excluir_${id}" data-id="${id}">EXCLUIR</button>
+                <button class="btn_editar" id="btn_editar_${id}" data-id="${bd_id}">EDITAR</button>
+                <button class="btn_excluir" id="btn_excluir_${id}" data-id="${bd_id}">EXCLUIR</button>
             </div>
         `;
         listagemDiv.appendChild(itemDiv);
@@ -52,15 +53,25 @@ async function displayData(data) {
         
 
         function handleEdit(event) {
-            const id = event.target.getAttribute('data-id');
-            alert(`Edit button clicked for ID: ${id}`);
-            // Add your edit logic here
+            const data_id = event.target.getAttribute('data-id');
+            alert(data_id)
         }
 
         function handleDelete(event) {
-            const id = event.target.getAttribute('data-id');
-            alert(`Delete button clicked for ID: ${id}`);
-            // Add your delete logic here
+            const data_id = event.target.getAttribute('data-id');
+            Swal.fire({
+                title: `Você desejar excluir?`,
+                text: "está ação não pode ser revertida",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Sim, deletar"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                response = excluir_pokemon(data_id)
+                }
+            });
         }
 }
 
@@ -89,3 +100,42 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 });
+
+async function excluir_pokemon(id){
+    const options = {
+        method: 'DELETE',
+        url: 'http://localhost:8000/Pokemon/deletar_pokemon/',
+        params: {id: id},
+      };
+      
+      axios.request(options).then(function (response) {
+        returned = response.data.STATUS
+        if(returned = {"STATUS":"DELETED"}){
+            Swal.fire({
+                title: "Deletado!",
+                text: "Este arquivo foi excluido com sucesso!",
+                icon: "success"
+              }).then((result) => {
+                // Verifique se o usuário confirmou a ação no SweetAlert
+                if (result.isConfirmed) {
+                    // Atualize a página
+                    location.reload();
+                }
+            }
+        )
+        }else{
+            Swal.fire({
+                title: "Occoreu um erro!",
+                text: "Este arquivo não foi encontrado!",
+                icon: "warning"
+              });
+        }
+      }).catch(function (error) {
+        Swal.fire({
+            title: "Occoreu um erro!",
+            text: "Não foi possivel concluir esta ação!",
+            icon: "warning"
+          });
+        return error
+      });
+}

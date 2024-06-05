@@ -11,7 +11,8 @@ const urlsToCache = [
   '/Frontend/HTML/cadastroPokeCEP.html',
   '/Frontend/images/4814407.jpg',
   '/Frontend/images/placeholder_1514017.png',
-  '/Frontend/images/pokeball_419467.png'
+  '/Frontend/images/pokeball_419467.png',
+  '/Frontend/JS/listar_pokemon.js'
 ];
 //instalando Service Worker/ Abrindo Cache e adicionando assets
 self.addEventListener('install', event => {
