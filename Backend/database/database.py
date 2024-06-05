@@ -31,3 +31,21 @@ def deletar_pokemon(id):
     else:
         return{"STATUS":"NOT FOUND"}
 
+def editar_pokemon(id, name):
+    update = {
+    "$set": {
+        "id": name,
+    }
+}
+    object_id_str = id
+    object_id = ObjectId(object_id_str)
+    filter_id = {"_id": object_id}
+    response = collection.find_one_and_update(
+    filter = filter_id,
+    update = update,
+)
+    if response:
+        return {"STATUS":"UPDATED"}
+    else:
+        return{"STATUS":"NOT FOUND"}
+    

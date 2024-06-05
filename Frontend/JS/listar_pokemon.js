@@ -54,7 +54,20 @@ async function displayData(data) {
 
         function handleEdit(event) {
             const data_id = event.target.getAttribute('data-id');
-            alert(data_id)
+            Swal.fire({
+                title: "Você pode alterar o ID do pokemon selecionado!",
+                input: "text",
+                inputAttributes: {
+                  autocapitalize: "off"
+                },
+                showCancelButton: true,
+                confirmButtonText: "Atualizar",
+                showLoaderOnConfirm: true,
+                preConfirm: async (new_name) => {
+                    const update = new_name
+                    editar_pokemon(data_id, new_name)
+                }
+              });
         }
 
         function handleDelete(event) {
@@ -137,5 +150,22 @@ async function excluir_pokemon(id){
             icon: "warning"
           });
         return error
+      });
+}
+
+async function editar_pokemon(id,name){
+    const options = {
+        method: 'PUT',
+        url: 'http://localhost:8000/Pokemon/editar_pokemon/',
+        params: {
+          id: id,
+          name: name,
+        },
+      };
+      axios.request(options).then(function (response) {
+        console.log(response.data);
+        location.reload();
+      }).catch(function (error) {
+        console.error(error);
       });
 }

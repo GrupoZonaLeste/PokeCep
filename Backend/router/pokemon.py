@@ -40,15 +40,16 @@ async def inserir_pokemon(pokemon: Pokemon, token: str = Depends(verificar_token
     enviar_pokemon(pokemon_dict)
 
 @router.delete('/deletar_pokemon/')
-async def excluir_pokemon(id: str):
+async def excluir_pokemon(id: str, token: str = Depends(verificar_token)):
     response = deletar_pokemon(id)
     return response
 
 @router.get('/listar_pokemon/')
-async def buscar_pokemon(cep):
+async def buscar_pokemon(cep, token: str = Depends(verificar_token)):
     pokemons = await listar_pokemon(cep)  
     return jsonable_encoder(pokemons)
 
 @router.put('/editar_pokemon/')
-async def editar_pokemon():
-    pass
+async def atualizar_pokemon(id: str, name: str, token: str = Depends(verificar_token)):
+    response = editar_pokemon(id, name)
+    return response
